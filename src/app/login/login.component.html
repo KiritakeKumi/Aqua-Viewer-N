@@ -1,0 +1,20 @@
+<mat-card class="login-card">
+  <mat-card-title>
+    登录
+  </mat-card-title>
+  <mat-card-content>
+    <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+
+      <mat-form-field class="full-width">
+        <mat-label>访问代码（如访问代码不可用 请尝试输入卡号（20位））</mat-label>
+        <input formControlName="accessCode" matInput required type="text">
+      </mat-form-field>
+      <mat-form-field class="full-width">
+        <mat-label>游戏服务器地址（类似于 http://114.51.41.19:80 的完整地址）</mat-label>
+        <input formControlName="apiServer" matInput required type="text">
+      </mat-form-field>
+      <p> 在单击下方登录按钮后 可能会遇到403or404错误 作为应急解决方案 您可以在地址栏中删去末尾的 login 重新访问即可</p>
+      <button [disabled]="!loginForm.valid" mat-raised-button type="submit">登录</button>
+    </form>
+  </mat-card-content>
+</mat-card>
