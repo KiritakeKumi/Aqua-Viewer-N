@@ -9,7 +9,14 @@ Aqua Viewer是Aqua Server的网页UI 不过进行了一些改动和修正 同时
 ## 想用？从源代码进行构建
 
 
-你必须安装Angular-cli然后运行 `ng build`.
+你必须安装 Angular-cli 然后运行
+
+ng build --configuration=production
+
+
+如果是构建用于Aqua内部的  ng build --configuration=production --base-href /web/
+
+
 一般来说 安装后检查相关组件有没有装上就没啥问题了.
 
 ## 不想编译 想抄作业？
