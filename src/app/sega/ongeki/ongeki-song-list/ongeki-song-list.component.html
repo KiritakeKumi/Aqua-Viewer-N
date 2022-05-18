@@ -1,3 +1,5 @@
+<h1 class="mat-display-1">Music List</h1>
+
 <mat-form-field>
   <input (keyup)="applyFilter($event.target.value)" matInput placeholder="Filter">
 </mat-form-field>
@@ -7,11 +9,11 @@
     <td *matCellDef="let element" mat-cell> {{element.id}} </td>
   </ng-container>
   <ng-container matColumnDef="name">
-    <th *matHeaderCellDef mat-header-cell> 歌曲名</th>
+    <th *matHeaderCellDef mat-header-cell> Name</th>
     <td *matCellDef="let element" mat-cell> {{element.name}} </td>
   </ng-container>
   <ng-container matColumnDef="artistName">
-    <th *matHeaderCellDef mat-header-cell> 作曲者</th>
+    <th *matHeaderCellDef mat-header-cell> Artist</th>
     <td *matCellDef="let element" mat-cell> {{element.artistName}} </td>
   </ng-container>
   <tr *matHeaderRowDef="displayedColumns" mat-header-row></tr>

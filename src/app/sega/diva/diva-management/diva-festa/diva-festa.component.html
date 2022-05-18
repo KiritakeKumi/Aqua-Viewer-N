@@ -1,7 +1,7 @@
 <mat-card>
   <mat-card-title>
-    <div>节日加成列表, 长度: {{festas ? festas.length : 0}}</div>
-    <button (click)="edit(undefined)" mat-flat-button>添加</button>
+    <div>Festa List, Length: {{festas ? festas.length : 0}}</div>
+    <button (click)="edit(undefined)" mat-flat-button>Add</button>
   </mat-card-title>
 </mat-card>
 <div *ngIf="festas">
@@ -13,50 +13,50 @@
           <td>{{festa.id}}</td>
         </tr>
         <tr>
-          <th>节日名称</th>
+          <th>Name</th>
           <td>{{festa.name}}</td>
         </tr>
         <tr>
-          <th>加成类型</th>
+          <th>FestaKind</th>
           <td>{{festaKind[festa.kind]}}</td>
         </tr>
         <tr>
-          <th>限定难度</th>
+          <th>Difficulty</th>
           <td>{{difficulty[festa.difficulty]}}</td>
         </tr>
         <tr>
-          <th>PV列表</th>
+          <th>PvList</th>
           <td>{{festa.pvList}}</td>
         </tr>
         <tr>
-          <th>属性</th>
+          <th>Attributes</th>
           <td>{{festa.attributes}}</td>
         </tr>
         <tr>
-          <th>VP点数奖励</th>
+          <th>Add VP</th>
           <td>{{festa.addVP}}</td>
         </tr>
         <tr>
-          <th>VP加成倍率</th>
+          <th>VP Multiplier</th>
           <td>{{festa.vpMultiplier}}</td>
         </tr>
         <tr>
-          <th>开始于</th>
+          <th>Start</th>
           <td>{{festa.start}}</td>
         </tr>
         <tr>
-          <th>结束于</th>
+          <th>End</th>
           <td>{{festa.end}}</td>
         </tr>
         <tr>
-          <th>创建日期</th>
+          <th>Create Date</th>
           <td>{{festa.createDate}}</td>
         </tr>
       </table>
     </mat-card-content>
     <mat-card-actions>
-      <button (click)="edit(festa)" mat-flat-button>编辑</button>
-      <button (click)="delete(festa.id)" mat-flat-button>删除</button>
+      <button (click)="edit(festa)" mat-flat-button>Edit</button>
+      <button (click)="delete(festa.id)" mat-flat-button>Delete</button>
     </mat-card-actions>
   </mat-card>
 </div>

@@ -41,7 +41,7 @@ export class DivaPvRecordComponent implements OnInit {
     this.api.get('api/game/diva/pvRecord', param).subscribe(
       data => {
         if (data.content.length === 0) {
-          this.messageService.notice('没有更多记录了');
+          this.messageService.notice('No more record');
           return;
         }
         this.currentPage = data.page + 1;
@@ -51,7 +51,7 @@ export class DivaPvRecordComponent implements OnInit {
         });
         this.pvRecords.forEach(x => {
           if (!x.songInfo) {
-            this.dbService.getByID<DivaPv>('divaPv', x.pvId).then(
+            this.dbService.getByID<DivaPv>('divaPv', x.pvId).subscribe(
               m => x.songInfo = m
             );
           }

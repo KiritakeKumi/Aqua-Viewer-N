@@ -15,14 +15,19 @@ const routes: Routes = [
   {path: 'diva', loadChildren: () => import('./sega/diva/diva.module').then(mod => mod.DivaModule), canLoad: [AuthGuardService]},
   {path: 'ongeki', loadChildren: () => import('./sega/ongeki/ongeki.module').then(mod => mod.OngekiModule), canLoad: [AuthGuardService]},
   {
-    path: 'amazon',
-    loadChildren: () => import('./sega/chunithm/amazon/amazon.module').then(mod => mod.AmazonModule),
+    path: 'chuni/v1',
+    loadChildren: () => import('./sega/chunithm/v1/v1.module').then(mod => mod.V1Module),
+    canLoad: [AuthGuardService]
+  },
+  {
+    path: 'chuni/v2',
+    loadChildren: () => import('./sega/chunithm/v2/v2.module').then(mod => mod.V2Module),
     canLoad: [AuthGuardService]
   },
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes, {preloadingStrategy: PreloadAllModules})],
+  imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules, relativeLinkResolution: 'legacy' })],
   exports: [RouterModule]
 })
 

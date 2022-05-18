@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {PreloadService} from '../database/preload.service';
 import {NgxIndexedDBService} from 'ngx-indexed-db';
+import {environment} from '../../environments/environment';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,16 +10,25 @@ import {NgxIndexedDBService} from 'ngx-indexed-db';
 })
 export class DashboardComponent implements OnInit {
 
-  divaPv = '读取数据中';
-  divaModule = '读取数据中';
-  divaCustomize = '读取数据中';
-  chuniMusic = '读取数据中';
-  ongekiCard = '读取数据中';
-  ongekiCharacter = '读取数据中';
-  ongekiMusic = '读取数据中';
-  ongekiSkill = '读取数据中';
-  chuniCharacter = '读取数据中';
-  chuniSkill = '读取数据中';
+  divaPv = 'Initialize';
+  divaModule = 'Initialize';
+  divaCustomize = 'Initialize';
+  chuniMusic = 'Initialize';
+  ongekiCard = 'Initialize';
+  ongekiCharacter = 'Initialize';
+  ongekiMusic = 'Initialize';
+  ongekiSkill = 'Initialize';
+  chuniCharacter = 'Initialize';
+  chuniSkill = 'Initialize';
+  chusanMusic = 'Initialize';
+  chusanCharacter = 'Initialize';
+  chusanTrophy = 'Initialize';
+  chusanNamePlate = 'Initialize';
+  chusanSystemVoice = 'Initialize';
+  chusanMapIcon = 'Initialize';
+  chusanFrame = 'Initialize';
+  chusanAvatarAcc = 'Initialize';
+ enableImages = environment.enableImages;
 
   constructor(
     private dbService: NgxIndexedDBService,
@@ -37,11 +47,19 @@ export class DashboardComponent implements OnInit {
     this.preload.ongekiSkillState.subscribe(data => this.ongekiSkill = data);
     this.preload.chuniCharacterState.subscribe(data => this.chuniCharacter = data);
     this.preload.chuniSkillState.subscribe(data => this.chuniSkill = data);
+    this.preload.chusanMusicState.subscribe(data => this.chusanMusic = data);
+    this.preload.chusanCharacterState.subscribe(data => this.chusanCharacter = data);
+    this.preload.chusanTrophyState.subscribe(data => this.chusanTrophy = data);
+    this.preload.chusanNamePlateState.subscribe(data => this.chusanNamePlate = data);
+    this.preload.chusanSystemVoiceState.subscribe(data => this.chusanSystemVoice = data);
+    this.preload.chusanMapIconState.subscribe(data => this.chusanMapIcon = data);
+    this.preload.chusanFrameState.subscribe(data => this.chusanFrame = data);
+    this.preload.chusanAvatarAccState.subscribe(data => this.chusanAvatarAcc = data);
   }
 
   reload() {
     this.preload.reload();
-    this.dbService.deleteDatabase().then(
+    this.dbService.deleteDatabase().subscribe(
       () => window.location.reload()
     );
   }

@@ -1,10 +1,14 @@
-<p>
-  欢迎使用Aqua Viewer<br>
-  Build20220228@KiritakeKumi
-</p>
+<h1 class="mat-display-1">Dashboard</h1>
 
 <mat-card>
-  <mat-card-title>请等待下方资源加载完毕</mat-card-title>
+  <mat-card-content>
+    欢迎使用Aqua Viewer（由 Kiritake Kumi 简体中文化版本）<br>
+    该实例配置状态 {{enableImages ? 'use image assets.' : 'not to use image assets.'}}
+  </mat-card-content>
+</mat-card>
+
+<mat-card>
+  <mat-card-title>Status</mat-card-title>
   <mat-card-content>
     Diva歌曲列表状态 : {{divaPv}}<br>
     Diva服装模组状态 : {{divaPv}}<br>
@@ -16,9 +20,16 @@
     Ongeki角色列表状态 : {{ongekiCharacter}}<br>
     Ongeki歌曲列表状态 : {{ongekiMusic}}<br>
     Ongeki角色技能状态 : {{ongekiSkill}}<br>
-    maimaiDX玩家信息状态 ： {{maimaidxinfo}}
+    Chunithm New 歌曲列表状态: {{chusanMusic}}<br>
+    Chunithm New 角色列表状态: {{chusanCharacter}}<br>
+    Chunithm New 收藏品状态: {{chusanTrophy}}<br>
+    Chunithm New 奖牌状态: {{chusanNamePlate}}<br>
+    Chunithm New 系统语音状态: {{chusanSystemVoice}}<br>
+    Chunithm New 地图图标状态: {{chusanMapIcon}}<br>
+    Chunithm New Frame List: {{chusanFrame}}<br>
+    Chunithm New 头像状态: {{chusanAvatarAcc}}<br>
   </mat-card-content>
   <mat-card-actions>
-    <button mat-button (click)="reload()">清理本地缓存</button>
+    <button mat-button (click)="reload()">单击清除缓存</button>
   </mat-card-actions>
 </mat-card>

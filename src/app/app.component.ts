@@ -20,42 +20,37 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy {
   ongekiMenu: Menu[] = [
     {
       id: 0,
-      name: '玩家档案',
+      name: 'Profile',
       url: 'ongeki/profile'
     },
     {
       id: 1,
-      name: '对战点数',
+      name: 'Battle Point',
       url: 'ongeki/battle'
     },
     {
       id: 2,
-      name: '评级',
+      name: 'Rating',
       url: 'ongeki/rating'
     },
     {
       id: 3,
-      name: '最近游玩',
+      name: 'Play Record',
       url: 'ongeki/recent'
     },
     {
       id: 4,
-      name: '歌曲列表',
+      name: 'Music List',
       url: 'ongeki/song'
     },
     {
       id: 5,
-      name: '卡牌查看',
+      name: 'Card',
       url: 'ongeki/card'
     },
     {
       id: 6,
-      name: 'Item',
-      url: 'ongeki/item'
-    },
-    {
-      id: 7,
-      name: '游戏设定',
+      name: 'Setting',
       url: 'ongeki/setting'
     }
   ];
@@ -63,78 +58,116 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy {
   mobileQuery: MediaQueryList;
 
   dark = 'dark';
-  amazonMenus: Menu[] = [
+  v1Menus: Menu[] = [
     {
       id: 0,
-      name: '玩家档案',
-      url: 'amazon/profile'
+      name: 'Profile',
+      url: 'chuni/v1/profile'
     },
     {
       id: 1,
-      name: '评级',
-      url: 'amazon/rating'
+      name: 'Rating',
+      url: 'chuni/v1/rating'
     },
     {
       id: 2,
-      name: '最近游玩',
-      url: 'amazon/recent'
+      name: 'Play Record',
+      url: 'chuni/v1/recent'
     },
     {
       id: 3,
-      name: '歌曲列表',
-      url: 'amazon/song'
+      name: 'Music List',
+      url: 'chuni/v1/song'
     },
     {
       id: 4,
-      name: '角色设定',
-      url: 'amazon/character'
+      name: 'Character',
+      url: 'chuni/v1/character'
     },
     {
       id: 5,
-      name: '游戏设定',
-      url: 'amazon/setting'
+      name: 'Setting',
+      url: 'chuni/v1/setting'
+    }
+  ];
+
+  v2Menus: Menu[] = [
+    {
+      id: 0,
+      name: 'Profile',
+      url: 'chuni/v2/profile'
+    },
+    {
+      id: 1,
+      name: 'Rating',
+      url: 'chuni/v2/rating'
+    },
+    {
+      id: 2,
+      name: 'Play Record',
+      url: 'chuni/v2/recent'
+    },
+    {
+      id: 3,
+      name: 'Music List',
+      url: 'chuni/v2/song'
+    },
+    {
+      id: 4,
+      name: 'Character',
+      url: 'chuni/v2/character'
+    },
+    {
+      id: 5,
+      name: 'User Box',
+      url: 'chuni/v2/userbox'
+    },
+    {
+      id: 6,
+      name: 'Setting',
+      url: 'chuni/v2/setting'
     }
   ];
 
   divaMenus: Menu[] = [
     {
       id: 0,
-      name: '玩家档案',
+      name: 'Profile',
       url: 'diva/profile'
     },
     {
       id: 1,
-      name: 'PV纪录',
+      name: 'Pv Record',
       url: 'diva/record'
     },
     {
       id: 2,
-      name: 'PV列表',
+      name: 'Pv List',
       url: 'diva/pv'
     },
     {
       id: 3,
-      name: '最近游玩',
+      name: 'Recent Play',
       url: 'diva/recent'
     },
     {
       id: 4,
-      name: '游戏设定',
+      name: 'Setting',
       url: 'diva/setting'
     },
     {
       id: 5,
-      name: '服务器管理',
+      name: 'Management',
       url: 'diva/management'
     },
     {
       id: 6,
-      name: '模型列表',
+      name: 'Modules',
       url: 'diva/modules'
     },
     {
       id: 7,
-      name: '饰品列表',
+      name: 'Customizes',
       url: 'diva/customizes'
     },
   ];
@@ -175,7 +208,7 @@ export class AppComponent implements OnInit, OnChanges, OnDestroy {
 
   logout() {
     this.authenticationService.logout();
-    location.reload(true);
+    location.reload();
   }
 }
 

@@ -1,5 +1,7 @@
+<h1 class="mat-display-1">玩家资料</h1>
 <mat-card>
-  <mat-card-title>玩家资料</mat-card-title>
+  <mat-card-title>Overview</mat-card-title>
+  <mat-card-subtitle *ngIf="profile">{{profile.userName}}</mat-card-subtitle>
   <mat-card-content>
     <table *ngIf="profile" class="zebra">
       <tr>
@@ -7,33 +9,29 @@
         <td>{{profile.userName}}</td>
       </tr>
       <tr>
-        <th>玩家评级</th>
-        <td>{{profile.playerRating / 100 | number: '1.2-2'}}</td>
+        <th>评级</th>
+        <td>{{profile.playerRating / 100 | number: '1.2-2'}} (max {{profile.highestRating / 100 | number: '1.2-2'}})</td>
       </tr>
       <tr>
-        <th>玩家最高评级</th>
-        <td>{{profile.highestRating / 100 | number: '1.2-2'}}</td>
-      </tr>
-      <tr>
-        <th>对战点数</th>
+        <th>战斗点数</th>
         <td>{{profile.battlePoint}}</td>
       </tr>
       <tr>
-        <th>玩家等级</th>
+        <th>等级</th>
         <td>{{profile.level}}</td>
       </tr>
       <tr>
-        <th>总游玩次数</th>
+        <th>游玩次数</th>
         <td>{{profile.playCount}}</td>
       </tr>
       <tr>
-        <th>称号栏id</th>
+        <th>称号栏ID</th>
         <td>{{profile.nameplateId}}</td>
       </tr>
       <tr>
         <th>卡片</th>
         <td>{{profile.card ? profile.card.name : 'ID:' + profile.cardId}}
-          <img src="https://img.mxpkx.com/aquaview/UI_Card_{{profile.cardId|formatNumber:6}}_S.png"></td>
+        <img src="https://img.mxpkx.com/aquaview/UI_Card_{{profile.cardId|formatNumber:6}}_S.png"></td>
       </tr>
       <tr>
         <th>角色</th>

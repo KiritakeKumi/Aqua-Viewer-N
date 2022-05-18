@@ -1,6 +1,4 @@
-<mat-card>
-  <mat-card-title>所有卡片列表</mat-card-title>
-</mat-card>
+<h1 class="mat-display-1">所有卡片</h1>
 
 <mat-card *ngFor="let item of cardList | paginate: { id: 'card', itemsPerPage: 10, currentPage: p }">
   <mat-card-title>
@@ -9,9 +7,7 @@
   <mat-card-content>
     <div class="card-display">
       <div class="image">
-        <a href="https://img.mxpkx.com/aquaview/UI_Card_{{item.id|formatNumber:6}}.png" target="_blank">
-          <img src="https://img.mxpkx.com/aquaview/UI_Card_{{item.id|formatNumber:6}}_S.png">
-        </a>
+        <img *ngIf="enableImages == true" src="https://img.mxpkx.com/aquaview/UI_Card_{{item.id|formatNumber:6}}_S.png">
         <div *ngIf="item.characterInfo">
           {{item.characterInfo.name}}<br>
           {{item.characterInfo.cv ? '(CV: ' + item.characterInfo.cv + ')' : ''}}
@@ -28,7 +24,7 @@
             <td>{{item.rarity}}</td>
           </tr>
           <tr>
-            <th>卡片名字</th>
+            <th>卡片名称</th>
             <td>{{item.nickName}}</td>
           </tr>
           <tr>
@@ -40,7 +36,7 @@
             <td>{{item.school}}</td>
           </tr>
           <tr>
-            <th>年级</th>
+            <th>年龄</th>
             <td>{{item.gakunen}}</td>
           </tr>
           <tr>
@@ -61,7 +57,7 @@
   </mat-card-content>
   <mat-card-actions>
     <div fxFlex></div>
-    <button (click)="insertCard(item.id)" mat-button>我要白嫖！！</button>
+    <button (click)="insertCard(item.id)" mat-button>我要白嫖！</button>
   </mat-card-actions>
 </mat-card>
 <div class="pagination">

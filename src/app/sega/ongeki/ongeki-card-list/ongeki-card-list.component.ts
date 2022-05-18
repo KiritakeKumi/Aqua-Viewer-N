@@ -16,6 +16,7 @@ import {OngekiCharacter} from '../model/OngekiCharacter';
 export class OngekiCardListComponent implements OnInit {
 
   host = environment.assetsHost;
+  enableImages = environment.enableImages;
 
   cardList: OngekiCard[] = [];
 
@@ -30,11 +31,11 @@ export class OngekiCardListComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.dbService.getAll<OngekiCard>('ongekiCard').then(
+    this.dbService.getAll<OngekiCard>('ongekiCard').subscribe(
       x => x.forEach(y => {
-        this.dbService.getByID<OngekiCharacter>('ongekiCharacter', y.charaId).then(z => y.characterInfo = z);
-        this.dbService.getByID<OngekiSkill>('ongekiSkill', y.skillId).then(z => y.skillInfo = z);
-        this.dbService.getByID<OngekiSkill>('ongekiSkill', y.choKaikaSkillId).then(z => y.choKaikaSkillInfo = z);
+        this.dbService.getByID<OngekiCharacter>('ongekiCharacter', y.charaId).subscribe(z => y.characterInfo = z);
+        this.dbService.getByID<OngekiSkill>('ongekiSkill', y.skillId).subscribe(z => y.skillInfo = z);
+        this.dbService.getByID<OngekiSkill>('ongekiSkill', y.choKaikaSkillId).subscribe(z => y.choKaikaSkillInfo = z);
         this.cardList.push(y);
       })
     );

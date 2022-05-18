@@ -28,7 +28,11 @@ export class ImporterComponent implements OnInit {
   }
 
   chunithm(event) {
-    this.uploadDocument(event.target.files[0], 'api/game/chuni/amazon/import', 'SDBT');
+    this.uploadDocument(event.target.files[0], 'api/game/chuni/v1/import', 'SDBT');
+  }
+
+  chusan(event) {
+    this.uploadDocument(event.target.files[0], 'api/game/chuni/v2/import', 'SDHD');
   }
 
   ongeki(event) {
@@ -46,10 +50,10 @@ export class ImporterComponent implements OnInit {
           error => this.messageService.notice(error)
         );
       } else {
-        this.messageService.notice('错误的游戏ID，请检查您是否选择了正确的文件.');
+        this.messageService.notice('Wrong Game ID, please check you have select the correct file.');
       }
     };
     fileReader.readAsText(file);
-    this.messageService.notice('上传中...');
+    this.messageService.notice('Uploading...');
   }
 }
