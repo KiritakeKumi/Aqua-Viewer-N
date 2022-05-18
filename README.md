@@ -1,7 +1,7 @@
 # Aqua-Viewer-N
 
 
-Aqua Viewer是Aqua Server的网页UI 不过进行了一些改动和修正
+Aqua Viewer是Aqua Server的网页UI 不过进行了一些改动和修正 同时顺便汉化了
 
 这个项目基于 Angular.
 
@@ -18,4 +18,4 @@ Aqua Viewer是Aqua Server的网页UI 不过进行了一些改动和修正
 
 ## 后记
 
-在 https://github.com/Magicial-Studio/Aqua-Viewer-Unofficial-Chinese-Translate 及 https://github.com/samnyan/aqua-viewer 的基础上开发
+在 https://dev.s-ul.net/domeori/aqua-viewer 的基础上开发
