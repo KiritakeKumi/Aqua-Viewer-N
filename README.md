@@ -1,9 +1,7 @@
 # Aqua-Viewer-N
 
 
-Aqua Viewer是Aqua Server的网页UI 不过进行了一些改动和修正 同时顺便汉化了
-
-这个项目基于 Angular.
+Aqua Viewer 是 Aqua Server 的网页UI  Aqua-Viewer-N 进行了一些改动和修正以及汉化工作
 
 
 ## 想用？从源代码进行构建
@@ -21,8 +19,8 @@ ng build --configuration=production
 
 ## 不想编译 想抄作业？
 
-抄吧抄吧qwq  https://github.com/KiritakeKumi/Aqua-Viewer-N/releases/tag/Public
+抄吧抄吧qwq  https://github.com/KiritakeKumi/Aqua-Viewer-N/releases
 
 ## 后记
 
-在 https://dev.s-ul.net/domeori/aqua-viewer 的基础上开发
+在 https://dev.s-ul.net/domeori/aqua-viewer 的基础上汉化
