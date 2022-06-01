@@ -10,7 +10,7 @@
       <mat-icon aria-hidden="false" aria-label="User menu">face</mat-icon>
     </button>
     <mat-menu #userMenu="matMenu">
-      <button (click)="logout()" mat-menu-item>Logout</button>
+      <button (click)="logout()" mat-menu-item>登出</button>
     </mat-menu>
 
   </mat-toolbar>
@@ -23,16 +23,16 @@
         <a mat-list-item routerLink="/dashboard">Dashboard</a>
         <a mat-list-item routerLink="/import">Import</a>
         <mat-divider></mat-divider>
-        <mat-toolbar>O.N.G.E.K.I</mat-toolbar>
+        <mat-toolbar>O.N.G.E.K.I 音击</mat-toolbar>
         <a *ngFor="let item of ongekiMenu" mat-list-item routerLink="/{{item.url}}">{{item.name}}</a>
         <mat-divider></mat-divider>
-        <mat-toolbar>CHUNITHM</mat-toolbar>
+        <mat-toolbar>CHUNITHM 中二节奏</mat-toolbar>
         <a *ngFor="let item of v1Menus" mat-list-item routerLink="/{{item.url}}">{{item.name}}</a>
         <mat-divider></mat-divider>
-        <mat-toolbar>CHUNITHM NEW</mat-toolbar>
+        <mat-toolbar>CHUNITHM NEW 中二节奏NEW</mat-toolbar>
         <a *ngFor="let item of v2Menus" mat-list-item routerLink="/{{item.url}}">{{item.name}}</a>
         <mat-divider></mat-divider>
-        <mat-toolbar>Project DIVA AFT</mat-toolbar>
+        <mat-toolbar>Project DIVA AFT 初音未來 歌姬计划</mat-toolbar>
         <a *ngFor="let item of divaMenus" mat-list-item routerLink="/{{item.url}}">{{item.name}}</a>
       </mat-nav-list>
     </mat-sidenav>
