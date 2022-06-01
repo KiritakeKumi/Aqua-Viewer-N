@@ -21,6 +21,10 @@ ng build --configuration=production
 
 抄吧抄吧qwq  直接去releases即可
 
+## 目前进度
+
+ongeki和基础页面基本完成  其他的在咕咕咕
+
 ## 后记
 
 在 domeori/aqua-viewer 的基础上M改
